@@ -36,7 +36,7 @@ app.post('/', jsonParser, (req, res, next) => {
         }
     );
 });
-app.put('/', (req, res, next) => {
+app.put('/:id',(req, res, next) => {
     if (!req.params.id) {
         return next(new AppError("No todo id found", 404));
     }
@@ -52,7 +52,7 @@ app.put('/', (req, res, next) => {
         }
     );
 });
-app.delete('/', (req, res, next) => {
+app.delete('/:id',(req, res, next) => {
     if (!req.params.id) {
         return next(new AppError("No todo id found", 404));
     }
